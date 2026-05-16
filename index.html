@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <title>Soutenance de thèse — Jérome Ricciardi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
   <main>
     <div class="lang"><a href="en.html">English</a></div>
@@ -14,31 +16,121 @@
     <p class="subtitle">Jérome Ricciardi</p>
 
     <section class="card">
-      <p><strong>Titre :</strong> TODO </p>
-      <p><strong>Date :</strong> TODO</p>
-      <p><strong>Heure :</strong> TODO</p>
-      <p><strong>Lieu :</strong> TODO</p>
-      <p><strong>Adresse :</strong> TODO</p>
+      <p><strong>Titre :</strong> Vérification pratique de transformations de circuits quantiques</p>
+      <p><strong>Date :</strong> jeudi 4 juin 2026</p>
+      <p><strong>Heure :</strong> 14h00, heure de Paris (CEST)</p>
+      <p><strong>Statut légal :</strong> soutenance publique</p>
+      <p><strong>Langue :</strong> anglais</p>
+      <p><strong>Format :</strong> 45 minutes de présentation, suivies des questions</p>
+      <p><strong>Lieu :</strong> École normale supérieure Paris-Saclay, salle 1Z61</p>
+      <p><strong>Adresse :</strong> 4 avenue des Sciences, 91190 Gif-sur-Yvette, France</p>
+      <p><a href="https://maps.app.goo.gl/YySipCzwZh6oyQ4a8">Ouvrir dans Google Maps</a></p>
+      <p><strong>Participation à distance :</strong> TODO</p>
+    </section>
+
+    <section>
+      <h2>Cadre institutionnel</h2>
+      <ul>
+        <li><strong>Établissement délivrant le diplôme :</strong> Université Paris-Saclay</li>
+        <li><strong>École doctorale :</strong> STIC - Sciences et Technologies de l'Information et de la Communication
+        </li>
+        <li><strong>Unités de recherche :</strong> LMF et LSL</li>
+        <li><strong>Directeur de thèse :</strong> Benoît Valiron, LMF</li>
+        <li><strong>Encadrant CEA :</strong> Christophe Chareton, CEA-List</li>
+      </ul>
     </section>
 
     <section>
       <h2>Résumé</h2>
-      <p>TODO</p>
+      <p>
+        L'informatique quantique, qui repose sur les principes de la physique quantique, promet des gains significatifs
+        en termes de puissance de calcul. Cependant, elle introduit de nouveaux défis, notamment pour la vérification de
+        programmes. En effet, les techniques de vérification classiques ne s'appliquent pas directement à l'informatique
+        quantique.
+        Cela s'explique principalement par l'utilisation de la mémoire quantique (unité d'information non standard) et
+        de son opération de mesure, qui est le seul moyen de récupérer une information à partir d'un bit quantique et
+        introduit un aspect probabiliste.
+      </p>
+      <p>
+        Dans cette thèse, nous nous concentrons sur le modèle de calcul quantique par circuits et sur un aspect pratique
+        de ce modèle : les transformations de circuit. Un circuit quantique peut être purement quantique (circuit
+        unitaire) ou inclure du contrôle classique et de la mesure (circuit hybride). Les transformations de circuits se
+        produisent tout au long du processus de calcul quantique, qu'il s'agisse de
+        compiler un circuit décrit dans un langage de haut niveau vers un langage de bas niveau, d'optimiser un circuit
+        pour un matériel particulier (transpilation), de changer de modèle de calcul (one-way measurement), ou de
+        transférer un état quantique (téléportation).
+      </p>
+      <p>
+        Chacune de ces transformations peut altérer le comportement du circuit ; nous avons donc besoin d'outils
+        permettant de vérifier sa préservation. Mais la plupart des outils actuels sont limités au cas unitaire, donc
+        limités à vérifier des transformations qui
+        ne changent pas le type de circuit: un circuit unitaire est transformé en circuit unitaire.
+        Et ceux qui s'aventurent dans le cas hybride sont limités à l'hybridation : un circuit unitaire est transformé
+        en un circuit hybride.
+        Alors que le vrai défi survient lors de l'introduction de fils auxiliaires, tels que les ancillas, ou les
+        <em>discards</em>, car il faut s'assurer que ces fils auxiliaires n'affectent pas les autres.
+      </p>
+      <p>
+        Pour vérifier un circuit, plusieurs techniques existent (simulation, exécution symbolique, preuve), qui
+        diffèrent par leur automatisation et leur scalabilité. La simulation, bien qu'automatisable, manque de
+        scalabilité. L'exécution symbolique, automatisable, passe mieux à l'échelle. La preuve, insensible à l'échelle,
+        est difficile à automatiser. Nous avons ainsi opté pour la preuve et pour l'exécution symbolique. Nous avons
+        utilisé la preuve pour certifier une passe de compilation d'un langage de haut niveau vers un langage de bas
+        niveau. Et l'exécution symbolique, en développant un outil de vérification d'équivalence de circuits hybrides
+        avec <em>discard</em>.
+      </p>
+      <p>
+        Pour nous aider dans la preuve, nous avons utilisé l'outil de preuve semi-automatique
+        Qbricks, capable de prouver des circuits unitaires paramétrés basés sur les sommes de chemins, un formalisme
+        permettant une modélisation compacte et encodable des circuits.
+      </p>
+      <p>
+        En préalable au développement de notre outil de vérification de circuits hybrides avec <em>discard</em>, nous
+        avons défini des relations d'équivalence partielles pour les circuits unitaires, ainsi qu'un mécanisme pour
+        étendre les outils de vérification unitaires aux circuits hybrides. La combinaison de ces deux composants permet
+        de traiter les circuits hybrides avec discard.
+      </p>
+      <p>
+        Pour évaluer notre approche, nous avons implémenté dans l'outil SQbricks nos relations d'équivalence ainsi que
+        notre mécanisme d'extension des outils limités aux unitaires. Nous avons démontré que les outils unitaires
+        étendus au cas hybride sans discard surpassent, pour la plupart, largement l'état de l'art. Et qu'avec l'ajout
+        d'un test de séparation au niveau unitaire, nous pouvons traiter des classes beaucoup plus vastes.
+      </p>
     </section>
 
     <section>
       <h2>Jury</h2>
       <ul>
-        <li>TODO</li>
+        <li>Miriam Backens - membre du jury, LORIA</li>
+        <li>Sylvie Boldo - membre du jury, Inria</li>
+        <li>Aleks Kissinger - rapporteur, University of Oxford</li>
+        <li>Alessandra Di Pierro - rapporteure, University of Verona</li>
       </ul>
     </section>
 
     <section>
       <h2>Accès</h2>
       <p>
-        <a href="TODO">
-          TODO
-        </a>
+        La soutenance aura lieu à l'École normale supérieure Paris-Saclay, salle 1Z61,
+        4 avenue des Sciences, 91190 Gif-sur-Yvette.
+      </p>
+      <p>
+        Depuis Paris, prendre le RER B direction Saint-Rémy-lès-Chevreuse jusqu'au Guichet, puis le bus 9108 ou 4609
+        jusqu'à l'arrêt Moulon. Il est aussi possible de prendre le RER B ou le RER C jusqu'à Massy-Palaiseau, puis le
+        bus 4606 ou 91.06B jusqu'à Moulon.
+      </p>
+      <p><a href="https://ens-paris-saclay.fr/lecole/venir-lecole">Informations d'accès de l'ENS Paris-Saclay</a></p>
+    </section>
+
+    <section>
+      <h2>Après la soutenance</h2>
+      <p>
+        Un pot sera prévu après la soutenance à l'espace cafétéria.
+        <a href="https://maps.app.goo.gl/uY7dRMi2qqMR5Bhy9">Ouvrir dans Google Maps</a>
+      </p>
+      <p>
+        Plus tard dans la soirée, à partir de 19h-20h selon l'heure de fin de la soutenance, nous continuerons ici :
+        <a href="https://maps.app.goo.gl/phhV9KRYEQvaL94y9">Ouvrir dans Google Maps</a>
       </p>
     </section>
 
@@ -48,4 +140,5 @@
     </section>
   </main>
 </body>
+
 </html>

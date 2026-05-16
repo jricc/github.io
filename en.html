@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>PhD Defense — Jérome Ricciardi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
   <main>
     <div class="lang"><a href="index.html">Français</a></div>
@@ -14,31 +16,109 @@
     <p class="subtitle">Jérome Ricciardi</p>
 
     <section class="card">
-      <p><strong>Title :</strong> TODO</p>
-      <p><strong>Date :</strong> TODO</p>
-      <p><strong>Time :</strong> TODO</p>
-      <p><strong>Location :</strong> TODO</p>
-      <p><strong>Adress :</strong> TODO</p>
+      <p><strong>Title:</strong> Practical Verification of Quantum Circuit Transformations</p>
+      <p><strong>Date:</strong> Thursday, 4 June 2026</p>
+      <p><strong>Time:</strong> 14:00, Paris time (CEST)</p>
+      <p><strong>Legal status:</strong> Public PhD defense</p>
+      <p><strong>Language:</strong> English</p>
+      <p><strong>Format:</strong> 45-minute presentation, followed by questions</p>
+      <p><strong>Location:</strong> École normale supérieure Paris-Saclay, room 1Z61</p>
+      <p><strong>Address:</strong> 4 avenue des Sciences, 91190 Gif-sur-Yvette, France</p>
+      <p><a href="https://maps.app.goo.gl/YySipCzwZh6oyQ4a8">Open in Google Maps</a></p>
+      <p><strong>Remote attendance:</strong> TODO</p>
+    </section>
+
+    <section>
+      <h2>Institutional Framework</h2>
+      <ul>
+        <li><strong>Degree-awarding institution:</strong> Université Paris-Saclay</li>
+        <li><strong>Doctoral school:</strong> STIC - Sciences and Technologies of Information and Communication</li>
+        <li><strong>Research units:</strong> LMF and LSL</li>
+        <li><strong>Thesis supervisor:</strong> Benoît Valiron, LMF</li>
+        <li><strong>CEA advisor:</strong> Christophe Chareton, CEA-List</li>
+      </ul>
     </section>
 
     <section>
       <h2>Abstract</h2>
-      <p>TODO</p>
+      <p>Quantum computing, based on the principles of quantum physics, promises significant gains in computational
+        power. However, it introduces new challenges, particularly for program verification. Classical verification
+        techniques do not apply directly to quantum computing. This is mainly due to the use of
+        quantum memory (non-standard information unit) and its measurement operation, which is the only way to retrieve
+        information from a quantum bit and introduces a probabilistic aspect.</p>
+      <p>
+        In this thesis, we focus on the circuit-based quantum computing model and a practical aspect of it: circuit
+        transformations. A quantum circuit can be purely quantum (unitary circuit) or include classical control and
+        measurement (hybrid circuit). Circuit transformations occur throughout the quantum computation process, whether
+        compiling a circuit described
+        in a high-level language to a low-level language, optimising a circuit for specific hardware (transpilation),
+        changing the computation model, or transferring a quantum state (teleportation).</p>
+      <p>
+        Each of these transformations can alter the circuit's behaviour. Therefore, tools are needed to verify that the
+        behaviour is preserved. However, current tools are mostly limited to the unitary case, thus restricted to
+        verifying transformations that do not change the type of circuit: a unitary circuit is transformed into a
+        unitary circuit. Those that venture into the hybrid case are limited to hybridisation: a unitary circuit is
+        transformed into a
+        hybrid. The real challenge arises with the introduction of auxiliary wires, such as ancillas or
+        <em>discards</em> for hybrid circuits, as it must be ensured that these auxiliary wires do not affect the
+        others.
+      </p>
+      <p>
+        Several techniques exist for verifying a circuit (simulation, symbolic execution, proof), differing in their
+        automation and scalability. Simulation, while automatable, lacks scalability. Symbolic execution, which can be
+        automated, scales better. Proof, while scalable, is challenging to automate. We thus chose to use both proof and
+        symbolic execution. We use proof to certify a compilation pass from a high-level language to a low-level
+        language. We also use symbolic execution by developing a tool to verify the equivalence of hybrid circuits using
+        <em>discard</em>.
+      </p>
+      <p>
+        To assist us in the proof process, we utilise the semi-automatic proof tool Qbricks, which is capable of proving
+        parametrised unitary circuits based on path sums. This formalism allows for compact and encodable modelling of
+        circuits.</p>
+      <p>
+        As a prerequisite for developing our verification tool for hybrid circuits with <em>discard</em>, we define
+        partial equivalence relations for unitary circuits and a mechanism to extend unitary verification tools to
+        hybrid
+        circuits. The combination of these two components enables the handling of hybrid circuits with discard.</p>
+      <p>
+        To evaluate our approach, we implement in the tool SQbricks our equivalence relations and our mechanism for
+        extending tools limited to unitary circuits. We have demonstrated that unitary tools extended to the hybrid case
+        without discard vastly surpass the state of the art. Moreover, by adding a separation test at the unitary level,
+        we can handle much larger classes.</p>
     </section>
 
     <section>
       <h2>Jury</h2>
       <ul>
-        <li>TODO</li>
+        <li>Miriam Backens - jury member, LORIA</li>
+        <li>Sylvie Boldo - jury member, Inria</li>
+        <li>Aleks Kissinger - reviewer, University of Oxford</li>
+        <li>Alessandra Di Pierro - reviewer, University of Verona</li>
       </ul>
     </section>
 
     <section>
-      <h2>Accès</h2>
+      <h2>Access</h2>
       <p>
-        <a href="TODO">
-          TODO
-        </a>
+        The defense will take place at École normale supérieure Paris-Saclay, room 1Z61,
+        4 avenue des Sciences, 91190 Gif-sur-Yvette.
+      </p>
+      <p>
+        From Paris, take RER B towards Saint-Rémy-lès-Chevreuse to Le Guichet, then bus 9108 or 4609 to Moulon.
+        Alternatively, take RER B or RER C to Massy-Palaiseau, then bus 4606 or 91.06B to Moulon.
+      </p>
+      <p><a href="https://ens-paris-saclay.fr/lecole/venir-lecole">Access information from ENS Paris-Saclay</a></p>
+    </section>
+
+    <section>
+      <h2>After the Defense</h2>
+      <p>
+        Drinks and snacks will be served after the defense in the cafeteria area.
+        <a href="https://maps.app.goo.gl/uY7dRMi2qqMR5Bhy9">Open in Google Maps</a>
+      </p>
+      <p>
+        Later in the evening, from around 19:00-20:00 depending on when the defense ends, we will continue here:
+        <a href="https://maps.app.goo.gl/phhV9KRYEQvaL94y9">Open in Google Maps</a>
       </p>
     </section>
 
@@ -48,4 +128,5 @@
     </section>
   </main>
 </body>
+
 </html>
