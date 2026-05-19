@@ -43,3 +43,33 @@ h2 {
 a {
   color: #005bbb;
 }
+
+.notice {
+  margin: 18px 0;
+  padding: 14px 16px;
+  background: #f3f7ff;
+  border-left: 4px solid #005bbb;
+}
+
+.notice p {
+  margin: 0 0 10px;
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 9px 12px;
+  color: #fff;
+  background: #005bbb;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:focus {
+  background: #004999;
+}
