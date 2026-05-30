@@ -73,3 +73,16 @@ a {
 .button-link:focus {
   background: #004999;
 }
+
+.map-preview {
+  width: 100%;
+  margin: 18px 0 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.map-preview object {
+  display: block;
+  width: 100%;
+  height: min(62vw, 420px);
+}
