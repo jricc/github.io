@@ -3,42 +3,48 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Soutenance de thèse — Jérome Ricciardi</title>
+  <title>Thèse de doctorat — Jérome Ricciardi</title>
+  <meta name="description"
+    content="Thèse de Jérome Ricciardi sur la vérification pratique des transformations de circuits quantiques. Manuscrit et diapositives de soutenance.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="alternate" hreflang="fr" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
   <main>
-    <div class="lang"><a href="en.html">English</a></div>
+    <nav class="lang" aria-label="Choix de la langue">
+      <a href="en.html" lang="en" hreflang="en">English</a>
+    </nav>
 
-    <h1>Soutenance de thèse</h1>
+    <h1>Thèse de doctorat</h1>
     <p class="subtitle">Jérome Ricciardi</p>
 
-    <section class="card">
-      <p><strong>Titre :</strong> Vérification pratique de transformations de circuits quantiques</p>
-      <p><strong>Date :</strong> jeudi 4 juin 2026</p>
-      <p><strong>Heure :</strong> 14h00, heure de Paris (CEST)</p>
-      <p><strong>Statut légal :</strong> soutenance publique</p>
-      <p><strong>Langue :</strong> anglais</p>
-      <p><strong>Format :</strong> 45 minutes de présentation, suivies des questions</p>
-      <p><strong>Lieu :</strong> École normale supérieure Paris-Saclay, salle 1Z61</p>
-      <p><strong>Adresse :</strong> 4 avenue des Sciences, 91190 Gif-sur-Yvette, France</p>
-      <p><a href="https://maps.app.goo.gl/YySipCzwZh6oyQ4a8">Ouvrir dans Google Maps</a></p>
-      <p><strong>Manuscrit :</strong> <a href="files/these_jerome.pdf">consulter le manuscrit de
-          thèse (PDF)</a></p>
-      <div class="notice">
-        <p><strong>Inscription</strong></p>
-        <p>
-          Les inscriptions sont maintenant closes, merci beaucoup à toutes les personnes qui ont répondu. Si vous avez
-          une question ou un changement de dernière minute, vous pouvez toujours me contacter par e-mail.
-        </p>
+    <section class="card" aria-labelledby="thesis-title">
+      <h2 class="thesis-title" id="thesis-title">
+        Vérification pratique des transformations de circuits quantiques
+      </h2>
+      <p>
+        Thèse soutenue publiquement le <time datetime="2026-06-04">4 juin 2026</time>
+        à l'École normale supérieure Paris-Saclay.
+        La présentation s'est déroulée en anglais.
+      </p>
+      <div class="documents">
+        <h3>Documents</h3>
+        <ul>
+          <li>
+            <a href="files/these_jerome.pdf" type="application/pdf">Consulter le manuscrit de thèse</a>
+            <span class="file-info">(PDF, 2,2 Mo)</span>
+          </li>
+          <li>
+            <a href="files/slides_soutenance_jerome.pdf" type="application/pdf">Consulter les diapositives de
+              soutenance</a>
+            <span class="file-info">(PDF, en anglais, 10,7 Mo)</span>
+          </li>
+        </ul>
       </div>
-      <p><a class="button-link" href="https://app.livestorm.co/p/a8d90776-4eb0-4152-9e04-aa9fddda8fc7">Lien
-          de visioconférence pour le public</a></p>
     </section>
-
-
 
     <section>
       <h2>Cadre institutionnel</h2>
@@ -74,39 +80,39 @@
       </p>
       <p>
         Chacune de ces transformations peut altérer le comportement du circuit ; nous avons donc besoin d'outils
-        permettant de vérifier sa préservation. Mais la plupart des outils actuels sont limités au cas unitaire, donc
-        limités à vérifier des transformations qui
-        ne changent pas le type de circuit: un circuit unitaire est transformé en circuit unitaire.
-        Et ceux qui s'aventurent dans le cas hybride sont limités à l'hybridation : un circuit unitaire est transformé
-        en un circuit hybride.
-        Alors que le vrai défi survient lors de l'introduction de fils auxiliaires, tels que les ancillas, ou les
-        <em>discards</em>, car il faut s'assurer que ces fils auxiliaires n'affectent pas les autres.
+        permettant de vérifier sa préservation. Cependant, la plupart des outils actuels sont limités au cas unitaire et
+        ne peuvent vérifier que des transformations qui ne changent pas le type du circuit : un circuit unitaire est
+        transformé en un autre circuit unitaire. Les outils qui prennent en charge le cas hybride se limitent
+        généralement à l'hybridation, où un circuit unitaire est transformé en circuit hybride. Le véritable défi
+        survient lors de l'introduction de fils auxiliaires, tels que les ancillas ou les opérations de
+        <em>discard</em>, car il faut s'assurer que ces fils auxiliaires n'affectent pas les autres.
       </p>
       <p>
-        Pour vérifier un circuit, plusieurs techniques existent (simulation, exécution symbolique, preuve), qui
-        diffèrent par leur automatisation et leur scalabilité. La simulation, bien qu'automatisable, manque de
-        scalabilité. L'exécution symbolique, automatisable, passe mieux à l'échelle. La preuve, insensible à l'échelle,
-        est difficile à automatiser. Nous avons ainsi opté pour la preuve et pour l'exécution symbolique. Nous avons
-        utilisé la preuve pour certifier une passe de compilation d'un langage de haut niveau vers un langage de bas
-        niveau. Et l'exécution symbolique, en développant un outil de vérification d'équivalence de circuits hybrides
-        avec <em>discard</em>.
+        Plusieurs techniques permettent de vérifier un circuit : la simulation, l'exécution symbolique et la preuve.
+        Elles diffèrent par leur degré d'automatisation et leur passage à l'échelle. La simulation, bien
+        qu'automatisable, passe difficilement à l'échelle. L'exécution symbolique, également automatisable, se comporte
+        mieux sur de grands circuits. La preuve passe à l'échelle, mais reste difficile à automatiser. Nous avons donc
+        combiné preuve et exécution symbolique : la première pour certifier une passe de compilation d'un langage de
+        haut niveau vers un langage de bas niveau, et la seconde pour développer un outil de vérification
+        d'équivalence de circuits hybrides avec <em>discard</em>.
       </p>
       <p>
         Pour nous aider dans la preuve, nous avons utilisé l'outil de preuve semi-automatique
-        Qbricks, capable de prouver des circuits unitaires paramétrés basés sur les sommes de chemins, un formalisme
-        permettant une modélisation compacte et encodable des circuits.
+        Qbricks, capable de prouver des circuits unitaires paramétrés fondés sur les sommes de chemins, un formalisme
+        permettant de modéliser les circuits de manière compacte et encodable.
       </p>
       <p>
-        En préalable au développement de notre outil de vérification de circuits hybrides avec <em>discard</em>, nous
+        Préalablement au développement de notre outil de vérification de circuits hybrides avec <em>discard</em>, nous
         avons défini des relations d'équivalence partielles pour les circuits unitaires, ainsi qu'un mécanisme pour
         étendre les outils de vérification unitaires aux circuits hybrides. La combinaison de ces deux composants permet
-        de traiter les circuits hybrides avec discard.
+        de traiter les circuits hybrides avec <em>discard</em>.
       </p>
       <p>
         Pour évaluer notre approche, nous avons implémenté dans l'outil SQbricks nos relations d'équivalence ainsi que
-        notre mécanisme d'extension des outils limités aux unitaires. Nous avons démontré que les outils unitaires
-        étendus au cas hybride sans discard surpassent, pour la plupart, largement l'état de l'art. Et qu'avec l'ajout
-        d'un test de séparation au niveau unitaire, nous pouvons traiter des classes beaucoup plus vastes.
+        notre mécanisme d'extension des outils limités aux circuits unitaires. Nos résultats montrent que les outils
+        unitaires étendus au cas hybride sans <em>discard</em> surpassent, pour la plupart, largement l'état de l'art.
+        Ils montrent également que l'ajout d'un test de séparation au niveau unitaire permet de traiter des classes
+        beaucoup plus vastes.
       </p>
     </section>
 
@@ -121,49 +127,8 @@
     </section>
 
     <section>
-      <h2>Accès</h2>
-      <p>
-        La soutenance aura lieu à l'École normale supérieure Paris-Saclay, salle 1Z61,
-        4 avenue des Sciences, 91190 Gif-sur-Yvette.
-      </p>
-      <p>
-        Pour se repérer dans le bâtiment, la numérotation des salles indique d'abord l'étage, puis les coordonnées sur
-        le plan. Dans <strong>1Z61</strong>, <strong>1</strong> correspond au 1er étage, <strong>Z</strong> à la rangée
-        et <strong>61</strong> à la colonne. La rangée A commence au sud du bâtiment, et la colonne 01 à l'ouest.
-      </p>
-      <p>
-        Depuis Paris, prendre le RER B direction Saint-Rémy-lès-Chevreuse jusqu'au Guichet, puis le bus 9108 ou 4609
-        jusqu'à l'arrêt Moulon. Il est aussi possible de prendre le RER B ou le RER C jusqu'à Massy-Palaiseau, puis le
-        bus 4606 ou 91.06B jusqu'à Moulon.
-      </p>
-      <div class="map-preview">
-        <object data="files/plan-ens.pdf" type="application/pdf" aria-label="Plan annoté de la salle 1Z61">
-          <p><a href="files/plan-ens.pdf">Ouvrir le plan annoté de la salle 1Z61 (PDF)</a></p>
-        </object>
-      </div>
-      <p><a href="files/plan-ens.pdf">Ouvrir le plan annoté en plein écran (PDF)</a></p>
-      <p><a href="https://ens-paris-saclay.fr/sites/default/files/2020-09/Plan%20ENS%20Paris-Saclay.pdf">Plan officiel
-          de l'ENS Paris-Saclay (PDF)</a></p>
-      <p><a href="https://ens-paris-saclay.fr/lecole/venir-lecole">Informations d'accès de l'ENS Paris-Saclay</a></p>
-    </section>
-
-    <section>
-      <h2>Après la soutenance</h2>
-      <p>
-        Un pot sera prévu après la soutenance dans la salle de billard du bâtiment 650.
-        <a href="https://maps.app.goo.gl/uY7dRMi2qqMR5Bhy9">Ouvrir dans Google Maps</a>
-      </p>
-      <p>
-        Plus tard dans la soirée, à partir de 19h-20h selon l'heure de fin de la soutenance, nous continuerons à Hall Of
-        Beer :
-        <a href="https://maps.app.goo.gl/phhV9KRYEQvaL94y9">Ouvrir dans Google Maps</a>
-      </p>
-    </section>
-
-    <section>
       <h2>Contact</h2>
       <p><a href="mailto:jricciardi@hotmail.fr">jricciardi@hotmail.fr</a></p>
-      <p><a href="mailto:mathieu.nguyen@cea.fr">mathieu.nguyen@cea.fr</a></p>
     </section>
   </main>
 </body>

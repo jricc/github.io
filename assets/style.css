@@ -3,21 +3,23 @@ body {
   margin: 0;
   color: #222;
   background: #fafafa;
+  line-height: 1.6;
 }
 
 main {
   max-width: 820px;
   margin: 0 auto;
-  padding: 48px 20px;
+  padding: clamp(24px, 6vw, 48px) 20px 56px;
 }
 
 .lang {
   text-align: right;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 7vw, 2.4rem);
+  line-height: 1.15;
   margin-bottom: 0.2em;
 }
 
@@ -29,6 +31,7 @@ h1 {
 
 h2 {
   margin-top: 36px;
+  line-height: 1.25;
 }
 
 .card {
@@ -40,49 +43,57 @@ h2 {
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
-a {
-  color: #005bbb;
+.thesis-title {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
 }
 
-.notice {
+a {
+  color: #005bbb;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid #f0a000;
+  outline-offset: 3px;
+}
+
+.documents {
   margin: 18px 0;
   padding: 14px 16px;
   background: #f3f7ff;
   border-left: 4px solid #005bbb;
 }
 
-.notice p {
-  margin: 0 0 10px;
+.documents h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
 }
 
-.notice p:last-child {
-  margin-bottom: 0;
+.documents ul {
+  margin: 0;
+  padding-left: 22px;
 }
 
-.button-link {
-  display: inline-block;
-  padding: 9px 12px;
-  color: #fff;
-  background: #005bbb;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
+.documents li + li {
+  margin-top: 6px;
 }
 
-.button-link:hover,
-.button-link:focus {
-  background: #004999;
+.file-info {
+  color: #555;
+  white-space: nowrap;
 }
 
-.map-preview {
-  width: 100%;
-  margin: 18px 0 8px;
-  border: 1px solid #ddd;
-  background: #fff;
-}
+@media (max-width: 520px) {
+  .card {
+    padding: 18px;
+  }
 
-.map-preview object {
-  display: block;
-  width: 100%;
-  height: min(62vw, 420px);
+  .file-info {
+    white-space: normal;
+  }
 }
