@@ -34,6 +34,14 @@ h2 {
   line-height: 1.25;
 }
 
+h3 {
+  margin: 24px 0 8px;
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
 .card {
   background: white;
   border: 1px solid #ddd;
@@ -41,11 +49,6 @@ h2 {
   padding: 20px 24px;
   margin: 32px 0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-}
-
-.thesis-title {
-  margin: 0 0 16px;
-  font-size: 1.35rem;
 }
 
 a {
@@ -86,6 +89,46 @@ a:focus-visible {
 .file-info {
   color: #555;
   white-space: nowrap;
+}
+
+.project-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.project-list li,
+.publication-list li {
+  margin: 0 0 18px;
+}
+
+.project-list a,
+.publication-list a {
+  font-weight: 650;
+}
+
+.project-list p,
+.publication-list p {
+  margin: 4px 0 0;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 4px 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+}
+
+.contact-list {
+  padding-left: 20px;
 }
 
 @media (max-width: 520px) {

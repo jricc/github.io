@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title>PhD Thesis — Jérome Ricciardi</title>
+  <title>Jérome Ricciardi — Formal methods, OCaml tooling, and quantum software</title>
   <meta name="description"
-    content="Jérome Ricciardi's PhD thesis on the practical verification of quantum circuit transformations. Thesis manuscript and defense slides.">
+    content="Personal page of Jérome Ricciardi: formal methods, OCaml tooling, quantum software, formal verification, and application support for quantum computing.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="alternate" hreflang="fr" href="index.html">
   <link rel="alternate" hreflang="en" href="en.html">
@@ -14,31 +14,56 @@
 
 <body>
   <main>
-    <nav class="lang" aria-label="Language selection">
+    <nav class="lang" aria-label="Profile links and language">
       <a href="index.html" lang="fr" hreflang="fr">Français</a>
+      <span aria-hidden="true"> · </span>
+      <a href="https://github.com/jricc">GitHub</a>
+      <span aria-hidden="true"> · </span>
+      <a href="https://www.linkedin.com/in/jerome-ricciardi">LinkedIn</a>
     </nav>
 
-    <h1>PhD Thesis</h1>
-    <p class="subtitle">Jérome Ricciardi</p>
-
-    <section class="card" aria-labelledby="thesis-title">
-      <h2 class="thesis-title" id="thesis-title">
-        Practical Verification of Quantum Circuit Transformations
-      </h2>
+    <header class="hero">
+      <h1>Jérome Ricciardi</h1>
+      <p class="subtitle">Formal methods, OCaml tooling, and quantum software</p>
       <p>
-        Publicly defended on <time datetime="2026-06-04">4 June 2026</time>
-        at École normale supérieure Paris-Saclay.
-        The presentation was given in English.
+        I am a software engineer and applied researcher with a background in formal methods and quantum software.
+        My work focuses on tool development, program and circuit verification, and user-facing application support
+        for scientific computing platforms.
+      </p>
+      <p>
+        I have worked on deductive verification, symbolic execution, OCaml tooling, and verification techniques for
+        quantum and hybrid quantum circuits.
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Current work</h2>
+      <p>
+        Application Support Engineer at Quandela, working on Lucy, Quandela's quantum computer deployed at TGCC.
+        I contributed to the final build phase and to the transition to operations, and I support users on the
+        application and algorithmic side while helping coordinate the integration with the computing center.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research / PhD</h2>
+      <p>
+        I defended my PhD thesis, <em>Practical Verification of Quantum Circuit Transformations</em>, on
+        <time datetime="2026-06-04">4 June 2026</time> at École normale supérieure Paris-Saclay.
+      </p>
+      <p>
+        The thesis focused on deductive verification, equivalence checking for quantum and hybrid circuits,
+        circuit transformations, and tool development for formal verification workflows.
       </p>
       <div class="documents">
-        <h3>Documents</h3>
+        <h3>Thesis documents</h3>
         <ul>
           <li>
-            <a href="files/manuscript.pdf" type="application/pdf">Read the thesis manuscript</a>
+            <a href="files/manuscript.pdf" type="application/pdf">Thesis manuscript</a>
             <span class="file-info">(PDF, 2.2 MB)</span>
           </li>
           <li>
-            <a href="files/slides.pdf" type="application/pdf">View the defense slides</a>
+            <a href="files/slides.pdf" type="application/pdf">Defense slides</a>
             <span class="file-info">(PDF, 10.7 MB)</span>
           </li>
         </ul>
@@ -46,76 +71,105 @@
     </section>
 
     <section>
-      <h2>Institutional framework</h2>
-      <ul>
-        <li><strong>Degree-awarding institution:</strong> Université Paris-Saclay</li>
-        <li><strong>Doctoral school:</strong> STIC - Sciences and Technologies of Information and Communication</li>
-        <li><strong>Research units:</strong> LMF and LSL</li>
-        <li><strong>Thesis supervisor:</strong> Benoît Valiron, LMF</li>
-        <li><strong>CEA advisor:</strong> Christophe Chareton, CEA-List</li>
+      <h2>Projects</h2>
+
+      <h3>Thesis projects</h3>
+      <ul class="project-list">
+        <li>
+          <a href="https://github.com/jricc/qbricks.github.io/tree/main/Qbricks_to_oqasm">Qbricks to OpenQASM</a>
+          <p>
+            Why3 development for certifying a Qbricks-to-OpenQASM translation pipeline.
+            The work proves semantics-preserving rewrites that eliminate or compile Qbricks constructs
+            before generating OpenQASM code.
+          </p>
+        </li>
+        <li>
+          <a href="https://github.com/jricc/qbricks.github.io/tree/main/Artifacts/SQbricks/SQbricks">SQbricks</a>
+          <p>
+            Tool chain for automatically checking hybrid quantum circuit transformations.
+            It combines deferred-measurement lifting with observed-output equivalence and separation checks
+            to handle measurements, classical control, and discarded data.
+          </p>
+        </li>
+      </ul>
+
+      <h3>Master projects</h3>
+      <ul class="project-list">
+        <li>
+          <a href="https://alaingiorgetti.github.io/autocheck/">AutoCheck</a>
+          <p>
+            Master's project on automated testing and checking of OCaml and WhyML properties.
+          </p>
+        </li>
+        <li>
+          <a href="https://github.com/alaingiorgetti/enum">ENUM</a>
+          <p>
+            Master's project related to enumeration-based testing and property checking.
+          </p>
+        </li>
+      </ul>
+
+      <h3>Quandela / related work</h3>
+      <ul class="project-list">
+        <li>
+          <a href="https://github.com/merlinquantum/reproduced_papers">Reproduced papers</a>
+          <p>
+            Repository associated with MerLin for reproducing and
+            benchmarking published quantum machine learning
+            papers,
+            with a focus on photonic and hybrid quantum computing.
+            It provides reusable code, notebooks, and analysis
+            resources for comparing reproduced results.
+          </p>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Abstract</h2>
-      <p>Quantum computing, based on the principles of quantum physics, promises significant gains in computational
-        power. However, it introduces new challenges, particularly for program verification. Classical verification
-        techniques do not apply directly to quantum computing. This is mainly due to the use of
-        quantum memory (non-standard information unit) and its measurement operation, which is the only way to retrieve
-        information from a quantum bit and introduces a probabilistic aspect.</p>
-      <p>
-        In this thesis, we focus on the circuit-based quantum computing model and a practical aspect of it: circuit
-        transformations. A quantum circuit can be purely quantum (unitary circuit) or include classical control and
-        measurement (hybrid circuit). Circuit transformations occur throughout the quantum computation process, whether
-        compiling a circuit described
-        in a high-level language to a low-level language, optimising a circuit for specific hardware (transpilation),
-        changing the computation model, or transferring a quantum state (teleportation).</p>
-      <p>
-        Each of these transformations can alter the circuit's behaviour. Therefore, tools are needed to verify that the
-        behaviour is preserved. However, current tools are mostly limited to the unitary case and can only verify
-        transformations that do not change the circuit type: a unitary circuit is transformed into another unitary
-        circuit. Tools that support hybrid circuits are generally limited to hybridisation, where a unitary circuit is
-        transformed into a hybrid circuit. The real challenge arises with the introduction of auxiliary wires, such as
-        ancillas or <em>discards</em>, because these auxiliary wires must not affect the others.
-      </p>
-      <p>
-        Several techniques can verify a circuit: simulation, symbolic execution, and proof. They differ in their degree
-        of automation and scalability. Simulation, while automatable, does not scale well. Symbolic execution can also
-        be automated and scales better. Proof scales well but is difficult to automate. We therefore combine proof and
-        symbolic execution: the former certifies a compilation pass from a high-level language to a low-level language,
-        while the latter supports a tool for verifying the equivalence of hybrid circuits with <em>discard</em>.
-      </p>
-      <p>
-        To assist us in the proof process, we utilise the semi-automatic proof tool Qbricks, which is capable of proving
-        parametrised unitary circuits based on path sums. This formalism provides a compact representation of circuits
-        suitable for encoding.</p>
-      <p>
-        As a prerequisite for developing our verification tool for hybrid circuits with <em>discard</em>, we define
-        partial equivalence relations for unitary circuits and a mechanism to extend unitary verification tools to
-        hybrid circuits. The combination of these two components enables the handling of hybrid circuits with
-        <em>discard</em>.
-      </p>
-      <p>
-        To evaluate our approach, we implement our equivalence relations and our mechanism for extending tools limited
-        to unitary circuits in SQbricks. Our results show that unitary tools extended to the hybrid case without
-        <em>discard</em> substantially outperform the state of the art. They also show that adding a separation test at
-        the unitary level allows us to handle much larger classes.
-      </p>
+      <h2>Papers</h2>
+      <ul class="publication-list">
+        <li>
+          <a href="https://hal.science/hal-03722048v1/document">Towards random and enumerative testing for OCaml
+            and WhyML properties</a>
+          <p>
+            Clotilde Erard, Jérome Ricciardi, Alain Giorgetti.
+            <em>Software Quality Journal</em>, 2022.
+            DOI: 10.1007/s11219-021-09572-z.
+          </p>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2511.22523">Quantum Circuit Equivalence Checking: A Tractable
+            Bridge From Unitary to Hybrid Circuits</a>
+          <p>
+            Jérome Ricciardi, Sébastien Bardin, Christophe Chareton, Benoît Valiron.
+            arXiv:2511.22523, 2025.
+          </p>
+        </li>
+      </ul>
     </section>
 
     <section>
-      <h2>Jury</h2>
-      <ul>
-        <li>Miriam Backens - jury member, LORIA</li>
-        <li>Sylvie Boldo - jury member, Inria</li>
-        <li>Aleks Kissinger - reviewer, University of Oxford</li>
-        <li>Alessandra Di Pierro - reviewer, University of Verona</li>
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>OCaml</li>
+        <li>Formal verification</li>
+        <li>Deductive verification</li>
+        <li>Symbolic execution</li>
+        <li>Quantum circuits</li>
+        <li>Quantum software</li>
+        <li>Tool development</li>
+        <li>Python</li>
+        <li>Git</li>
+        <li>Linux</li>
       </ul>
     </section>
 
     <section>
       <h2>Contact</h2>
-      <p><a href="mailto:jricciardi@hotmail.fr">jricciardi@hotmail.fr</a></p>
+      <ul class="contact-list">
+        <li><a href="https://github.com/jricc">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jerome-ricciardi">LinkedIn</a></li>
+      </ul>
     </section>
   </main>
 </body>
